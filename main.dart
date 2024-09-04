@@ -105,7 +105,7 @@ class MainScreen extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => BlueScreen()),
+                          MaterialPageRoute(builder: (context) => NoticeListScreen()),
                         );
                       },
                     ),
@@ -165,6 +165,94 @@ class MenuItem extends StatelessWidget {
   }
 }
 
+class NoticeListScreen extends StatelessWidget {
+  final List<String> notices = [
+    "2024.07.14 기숙사 퇴소 공지사항",
+    "2024.07.13 기숙사 입소 공지사항",
+    "2024.07.12 기숙사 퇴소 공지사항",
+    "2024.07.11 기숙사 입소 공지사항",
+    "2024.07.10 기숙사 퇴소 공지사항",
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        leading: BackButton(),
+        title: Text('공지'),
+      ),
+      body: ListView.builder(
+        itemCount: notices.length,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => NoticeDetailScreen(notice: notices[index]),
+                ),
+              );
+            },
+            child: Container(
+              margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+              padding: EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                color: Colors.black38,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Text(
+                notices[index],
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                ),
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+class NoticeDetailScreen extends StatelessWidget {
+  final String notice;
+
+  NoticeDetailScreen({required this.notice});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        leading: BackButton(),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              notice,
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 20),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Text(
+                  '여기에 공지사항의 세부 내용을 표시함',
+                  style: TextStyle(fontSize: 18),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class GreenScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -194,24 +282,6 @@ class OrangeScreen extends StatelessWidget {
       body: Center(
         child: Text(
           '기숙사 미입소 확인 페이지',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
-  }
-}
-
-class BlueScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue,
-        leading: BackButton(),
-      ),
-      body: Center(
-        child: Text(
-          '공지사항 확인 페이지',
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
       ),
