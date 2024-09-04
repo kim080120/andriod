@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 355), //검은색 크기11
                     Text(
                       "14m 03s",
                       style: TextStyle(
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 25), //검은색 크기 22
                   ],
                 ),
               ),
