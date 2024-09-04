@@ -23,10 +23,10 @@ class MyApp extends StatelessWidget {
                       "쉽고 빠르게\n기숙사 입소 관리",
                       style: TextStyle(
                         fontSize: 24,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
-                    SizedBox(height: 355), //검은색 크기11
+                    SizedBox(height: 355), //하얀색 크기11
                     Text(
                       "14m 03s",
                       style: TextStyle(
