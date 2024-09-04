@@ -20,22 +20,38 @@ class MyApp extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "쉽고 빠르게\n기숙사 입소 관리",
+                      "",
                       style: TextStyle(
-                        fontSize: 24,
+                        fontSize: 30,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
-                    SizedBox(height: 355), //하얀색 크기11
+                    SizedBox(height: 100), //하얀색 크기11
+                    Text(
+                      "쉽고 빠르게\n기숙사 입소 관리",
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    SizedBox(height: 100), //하얀색 크기11
+                    Text(
+                      "김명현님 안녕하세요",
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    SizedBox(height: 5), //하얀색 크기11
                     Text(
                       "14m 03s",
                       style: TextStyle(
-                        fontSize: 36,
+                        fontSize: 45,
                         color: Colors.green,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 25), //검은색 크기 22
+                    SizedBox(height: 40), //검은색 크기 22
                   ],
                 ),
               ),
