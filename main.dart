@@ -16,6 +16,11 @@ class MyApp extends StatelessWidget {
 class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // DateTime.now()로 현재 시간 가져오기
+    DateTime now = DateTime.now();
+    // 시와 분만 추출하여 문자열로 변환
+    String currentTime = '${now.hour}:${now.minute}';
+
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -50,8 +55,9 @@ class MainScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 5),
+                  // 시간 표시 부분: 시와 분만 표시
                   Text(
-                    "14m 03s",
+                    currentTime,  // 시:분 형식의 시간 표시
                     style: TextStyle(
                       fontSize: 45,
                       color: Colors.green,
@@ -165,6 +171,43 @@ class MenuItem extends StatelessWidget {
   }
 }
 
+class GreenScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        leading: BackButton(),
+      ),
+      body: Center(
+        child: Text(
+          '기숙사 입소 확인 페이지',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+  }
+}
+
+class OrangeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.orange,
+        leading: BackButton(),
+      ),
+      body: Center(
+        child: Text(
+          '기숙사 미입소 확인 페이지',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+  }
+}
+
+
 class NoticeListScreen extends StatelessWidget {
   final List<String> notices = [
     "2024.07.14 기숙사 퇴소 공지사항",
@@ -247,42 +290,6 @@ class NoticeDetailScreen extends StatelessWidget {
               ),
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class GreenScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.green,
-        leading: BackButton(),
-      ),
-      body: Center(
-        child: Text(
-          '기숙사 입소 확인 페이지',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
-  }
-}
-
-class OrangeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.orange,
-        leading: BackButton(),
-      ),
-      body: Center(
-        child: Text(
-          '기숙사 미입소 확인 페이지',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
       ),
     );
